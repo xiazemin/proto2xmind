@@ -1,0 +1,46 @@
+syntax = "proto3";
+package myService.pkg;
+option go_package = "./main";
+message Request {
+  string field1 = 1;
+  string field2 = 2;
+  oneof kind {
+    string name = 3;
+    int32  code = 4;
+  }
+}
+
+
+service myService{
+  rpc Hello(Request)returns (Response){}
+  rpc Hello1(Request)returns (Response){}
+  rpc Hello2(Request2)returns (Response2){}
+}
+
+
+
+message Response{
+  string field3 = 1;
+  string field4 = 2;
+}
+
+message Request2 {
+  string field1 = 1;
+  string field2 = 2;
+  oneof kind {
+    string name = 3;
+    int32  code = 4;
+  }
+}
+service yourService{
+  rpc Hello(Request)returns (Response){}
+  rpc Hello1(Request)returns (Response){}
+  rpc Hello2(Request2)returns (Response2){}
+}
+
+
+message Response2{
+  string field3 = 1;
+  string field4 = 2;
+  Response Response = 3;
+}

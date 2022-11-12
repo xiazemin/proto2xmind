@@ -1,4 +1,11 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-func main(){
+import "github.com/xiazemin/proto2xmind/cmd"
+
+func main() {
+	cmd.Execute()
 }
